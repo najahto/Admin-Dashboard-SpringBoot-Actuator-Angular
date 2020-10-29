@@ -96,4 +96,18 @@ export class EmpoyeeListComponent implements OnInit {
     );
   }
 
+  searchEmployees(keyword: String): void {
+    const results: Employee[] = [];
+    for (const employee of this.employees) {
+      if (employee.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
+        || employee.email.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
+        || employee.phone.toLowerCase().indexOf(keyword.toLowerCase()) !== -1) {
+        results.push(employee);
+      }
+    }
+    this.employees = results;
+    if(results.length === 0 || !keyword ){
+      this.getEmployees();
+    }
+  }
 }
