@@ -11,9 +11,9 @@ export interface SystemlHealth {
         diskSpace: {
             status: String,
             details: {
-                total: Number,
-                free: Number | String,
-                threshold: Number,
+                total: number,
+                free: number | string,
+                threshold: number,
                 exists:String
             }
         },

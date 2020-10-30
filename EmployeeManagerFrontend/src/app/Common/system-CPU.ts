@@ -2,10 +2,10 @@ export interface SystemCPU {
     name: String;
     description: String;
     baseUnit: any;
-    measurements: [
+    measurements: {
         statistic: String,
         value: Number[]
-    ];
+    };
     availabale: any[];
 
 
